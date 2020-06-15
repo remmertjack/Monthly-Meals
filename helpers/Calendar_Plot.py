@@ -1,6 +1,6 @@
 '''
 Project: Monthly Meals
-Title: Create Calendar Image
+Title: Calendar Plot Function
 Author: Jack Remmert
 Date: 5/23/2020
 '''
@@ -11,7 +11,6 @@ os.chdir(path)
 
 import pandas as pd
 import numpy as np
-from datetime import datetime
 import re
 from plotnine import *
 
@@ -22,28 +21,39 @@ from plotnine import *
 # user defined functions
 
 # user preferences
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 20)
 
-def gg_monthly_meals (dates, cats, meals, missing_dates = False):
+# read meals
+file = 'meals'
+meals = pd.read_csv('input/'+file+'.csv', delimiter = ',')
+
+def gg_monthly_meals (user_meals, missing_dates = False, saving = False):
 
     # define the color palette
-    fill_colors = {'Chicken': '#daa520'
-              ,'Fish': '#4d94ff'
-              ,'Meat':'#ff99c2'
+    fill_colors = {'Chicken': '#fcc438'
+                   ,'Fish': '#33FFD8'
+                   ,'Meat':'#F6B6FA'
+                   ,'Vegan':'#c290f5'
+                   ,'Vegetarian':'#3BE00A'
               }
-    
+    dates = pd.Series(user_meals.dates)
+    meal_ids = pd.Series(user_meals.Meal_Ids)
+    user_id = user_meals.user_id
     # organize in a dataframe
-    data = pd.concat([dates, cats, meals], axis=1)
+    data = pd.concat([dates, meal_ids], axis=1)
+    data.columns = ['dates','Meal_Id']
     data['dates'] = pd.to_datetime(data.dates, format='%m/%d/%Y')
-      
+    data = data.merge(meals[['Meal_Id','formatted_Meal','Category']]
+            ,on='Meal_Id', how='left')
+    
     # Do we want Missing Dates?
     if (missing_dates == True):
-        timeframe = pd.DataFrame(pd.date_range(min(data['dates']), max(data['dates'])), columns = ['dates'])
+        timeframe = pd.DataFrame(pd.date_range(min(data['dates'])
+                    ,max(data['dates'])), columns = ['dates'])
     else:
         timeframe = pd.DataFrame(data.dates, columns = ['dates'])
         
-    tf = pd.merge(timeframe,data, how='left',on = 'dates', left_index=True, right_index=True)
+    tf = pd.merge(timeframe,data, how='left',on = 'dates'
+                  ,left_index=True, right_index=True)
     tf['dow'] = tf['dates'].apply(lambda x: x.dayofweek)
     tf['Day_Name'] = tf['dates'].apply(lambda x: x.strftime("%A"))
     tf['Day_Number'] = tf['dates'].apply(lambda x: x.day)
@@ -60,7 +70,7 @@ def gg_monthly_meals (dates, cats, meals, missing_dates = False):
     # fix missing categories
     tf['Category']=tf.Category.fillna('NAs')
     # fix missing meals
-    tf['Meals']=tf.Meals.fillna('')
+    tf['Meals']=tf.formatted_Meal.fillna('')
       
     # Get Current Day Names
     day_names_ = {
@@ -79,9 +89,14 @@ def gg_monthly_meals (dates, cats, meals, missing_dates = False):
     # for axis. Thus create new geom_tile that visually operates as the row
     # Category == filler with Meal = Day
     # Set the y value to max(tf.y)+1; we want it aboe the first row.
-    xaxis = pd.DataFrame.from_dict(day_names_, orient='index',columns = ['Day_Name'])
+    xaxis = pd.DataFrame.from_dict(day_names_, orient='index'
+                                   ,columns = ['Day_Name'])
     xaxis['y'] = max(tf.y)+1
     xaxis['dow'] = xaxis.index 
+    
+    # fix color scheme based on user categories
+    cats = list(np.unique(tf.Category))
+    clrs = {category: clr for category, clr in fill_colors.items() if category in cats}
     
     p = ggplot() +\
             geom_tile(aes(x='dow', y='y', fill = 'Category'), tf.loc[tf.Category != 'NAs'], color='black') +\
@@ -91,11 +106,11 @@ def gg_monthly_meals (dates, cats, meals, missing_dates = False):
             geom_text(aes(x='dow', y = tf.y+.4, label = 'Day_Number'), tf, size=8) +\
             geom_text(aes(x='dow', y = 'y', label = 'Day_Name'), xaxis[xaxis.Day_Name.isin(day_names)], size=10) +\
             scale_y_continuous(expand=(0,0)) +\
-            scale_fill_manual(breaks = np.array(list(fill_colors.keys())), values = np.array(list(fill_colors.values()))) + \
+            scale_fill_manual(breaks = np.array(list(clrs.keys())), values = np.array(list(clrs.values()))) + \
             scale_size_identity()+\
             ggtitle(title)+\
             theme(
-              panel_background=element_rect(fill='white')
+              panel_background = element_rect(fill='white')
               ,legend_title = element_blank()
               ,legend_text = element_text(size = 10)
               ,axis_ticks=element_blank()
@@ -104,8 +119,9 @@ def gg_monthly_meals (dates, cats, meals, missing_dates = False):
               ,axis_text_x = element_blank()
               ,legend_position = 'bottom'
               )
-    #p.save(filename = 'figs/calendar.png', width = 11, height = 6.8, bg = 'transparent', verbose=False) 
-
+    image_name = 'figs/calendar_' + str(user_id) + '_.png'
+    if saving == True:
+        p.save(filename = image_name, width = 11, height = 6.8, bg = 'transparent', verbose=False) 
     return p
 
 '''

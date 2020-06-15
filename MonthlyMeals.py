@@ -14,41 +14,41 @@ os.chdir(path)
 import pandas as pd
 
 # import helpers
-#from helpers import Send_Email as se
+from helpers.Meal_Plan_ import Meal_Plan_Helper
 from helpers import Calendar_Plot as cd
-from helpers import Meal_Plan_Inputs as mpi
-from helpers.fixer_functions import fix_Meal_Plan as ffmp
-# user preferences
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 10)
+from helpers.Gmail_API_ import Gmail_API_Helper
 
-'''
-Read and Compile Data
-'''
-file = 'user_info'
-info = pd.read_csv('input/'+file+'.csv', delimiter = ',')
-
-file = 'user_preferences'
-preferences = pd.read_csv('input/'+file+'.csv', delimiter = ',')
-
-'''
-Create Timeframe Preference
-''' 
-preferences['dates'] = preferences.Weekends.apply(mpi.weekend_selection)
-
-'''
-Create Meals for Each USer
-''' 
-user_meals = preferences.apply(schedule)
-
-#==========
-# Create Images for Each Diet
-df = pd.read_csv('output/meals.csv')
-df = df.loc[pd.notnull(df["Meals"])]
-dates = df.dates
-cats = df.Category
-meals = df.Meals
-p = cd.gg_monthly_meals(dates, meals, False)
-#==========
-# Send Emails
-data.apply(se.send_email, args(user_email, user_firstname))
+def main():
+    # Read Data
+    file = 'user_info'
+    info = pd.read_csv('input/'+file+'.csv', delimiter = ',')
+    
+    file = 'user_preferences'
+    preferences = pd.read_csv('input/'+file+'.csv', delimiter = ',')
+    # Initalize Meal Plan Helper class
+    mph = Meal_Plan_Helper()
+    
+    # Create Timeframe Preference
+    preferences['dates'] = preferences.Weekends.apply(mph.weekend_selection)
+    
+    # Create Meals for Each User
+    preferences['Meal_Ids'] = preferences.apply(mph.compile_meals, axis=1)
+    preferences['last_months_meals'] = preferences.Meal_Ids
+    
+    # Create Calendar for Each User
+    preferences['img'] = preferences[['user_id', 'dates','Meal_Ids']].apply(
+                                        cd.gg_monthly_meals, axis=1)
+    
+    # Initalize Gmail API Helper
+    gmail_api = Gmail_API_Helper()
+    
+    # Join Images for each User Info
+    user_info = info.merge(preferences[['user_id', 'img']]
+                ,on='user_id', how='left')
+    # Create the Email
+    user_info['message'] = user_info.apply(gmail_api.create_message, args=(True), axis=1)
+    # Send Email
+    user_info.message.apply(gmail_api.send_email, axis=1)
+    
+if (__name__ == "__main__"):
+    main()  
