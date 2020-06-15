@@ -89,11 +89,11 @@ class Meal_Plan_Helper(object):
         if gf == 1:
             sens_data = sens_data.loc[sens_data.GF_Option == 1]
         if df == 1:
-            sens_data = sens_data.loc[sens_data.Diary_Free == 1]
+            sens_data = sens_data.loc[sens_data.Diary_Option == 1]
         if nf == 1:
-            sens_data = sens_data.loc[sens_data.Nut_Free == 1]
+            sens_data = sens_data.loc[sens_data.Nut_Option == 1]
         if sff == 1:
-            sens_data = sens_data.loc[sens_data.Shellfish_Free == 1]
+            sens_data = sens_data.loc[sens_data.Shellfish_Option == 1]
         
         return list(set(meal_ids) & set(sens_data.Meal_Id))
         
