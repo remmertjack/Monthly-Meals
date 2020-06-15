@@ -4,11 +4,6 @@ Title: Calendar Plot Function
 Author: Jack Remmert
 Date: 5/23/2020
 '''
-# working directory
-import os
-path = r"C:\Users\remme\OneDrive\Portfolio\recipes"
-os.chdir(path)
-
 import pandas as pd
 import numpy as np
 import re

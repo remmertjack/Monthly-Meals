@@ -4,12 +4,6 @@ Title: Send Monthly Meals
 Author: Jack Remmert
 Date: 5/23/2020
 '''
-# working directory
-import os
-#path = r"/Users/Jack_Remmert/OneDrive/Portfolio/recipes"
-path = r"C:\Users\remme\OneDrive\Portfolio\recipes"
-os.chdir(path)
-
 # import packages
 import pandas as pd
 
