@@ -1,0 +1,4 @@
+﻿user_id,Weekends,nChicken,nFish,nMeat,nVegan,nVegetarian,OP_Chicken,OP_Fish,OP_Meat,OP_Vegan,OP_Vegetarian,Diet,Gluten_Free,Diary_Free,Nut_Free,Shellfish_Free
+0,0,1,2,1,0,0,1,0,1,0,0,Omniovore,0,0,0,0
+1,0,1,2,1,0,0,1,0,1,0,0,Omniovore,0,0,0,0
+2,0,0,2,0,1,2,0,0,0,0,0,Pescatarian,0,0,0,0

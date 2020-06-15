@@ -1,0 +1,67 @@
+Meal_Id,Meal,formatted_Meal,Category,Sub_Category,Origin,Omnivore,Vegan,Vegetarian,Pescatarian,GF_Option,Diary_Option,Nut_Option,Shellfish_Option
+10000,Chicken Cutlet w/ Tomato Panzarella,Chicken Cutlet\nw/ Tomato\nPanzarella,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10001,Roast Chicken w/ Potatoes & Root Veggies,Roast Chicken\nw/ Potatoes\n& Root Veggies,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10002,Gingery Chicken Peanut Sauce w/ Rice & Broccoli,Gingery Chicken\nPeanut Sauce w/\nRice & Broccoli,Chicken,Chicken,,1,0,0,0,1,1,0,1
+10003,Tumeric & Grass Coconut Chicken Curry w/ Rice,Tumeric & \nCoconut Chicken\nCurry w/ Rice,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10004,Chicken w/ Cous Cous & (Sweet) Potatoes,Chicken w/ Cous\nCous &\n(Sweet) Potatoes,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10005,Miso Chicken w/ Rice & Broccoli,Miso Chicken\nw/ Rice\n& Broccoli,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10006,Oregano Chicken w/ Buttered Tomatoes,Oregano Chicken\nw/ Buttered\nTomatoes,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10007,Peanut Sesame Noodles w/ Chicken,Peanut Sesame\nNoodles\nw/ Chicken,Chicken,Chicken,,1,0,0,0,1,1,0,1
+10008,Maple Roasted Chicken & Veggies,Maple Roasted\nChicken &\nVeggies,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10009,Freestyle Chicken Farm w/ Spinach & Bread,Freestyle\nChicken Farm w/\nSpinach & Bread,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10010,Apricot Glazed Chicken,Apricot Glazed\nChicken,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10011,Caprese Stuffed Balsamic Chicken,Caprese Stuffed\nBalsamic\nChicken,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10012,Barbecued Cornish Game Hens,Barbecued\nCornish\nGame Hens,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10013,African Chicken w/Garlic and Tomatoes,African Chicken\nw/ Garlic\n& Tomatoes,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10014,Chicken w/ Carmelized Onions & Cardamom Rice,Chicken w/\nCarmelized\nOnions & Rice,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10015,Fig Rosemary Chicken w/ Squash,Fig Rosemary\nChicken w/\nSquash,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10016,Take Out Style Sesame Noodles w/ Chicken,Take Out Style\nSesame Noodles\nw/ Chicken,Chicken,Chicken,,1,0,0,0,1,1,1,1
+10017,Nancy's Salmon w/ Rice,Nancy's Salmon\nw/Rice,Fish,Ray,,1,0,0,1,1,1,1,1
+10018,Trout/Sole Almondine w/ Rice/Pasta & Brussel Sprouts,Trout Almondine\nw/ Pasta &\nBrussel Sprouts,Fish,White,,1,0,0,1,1,1,1,1
+10019,Linguine w/ Scallops & Brown Butter,Linguine w/\nScallops &\nBrown Butter,Fish,Shell,,1,0,0,1,1,1,1,0
+10020,Shrimp w/ Israeli cous cous & Broccoli,Shrimp w/\nIsraeli Cous\nCous & Broccoli,Fish,Shell,,1,0,0,1,1,1,1,0
+10021,Hoisin Glazed Scallops w/ Spinach,Hosin Glazed\nScallops w/\nSpinach,Fish,Shell,,1,0,0,1,1,1,1,0
+10022,Shrimp Scampi w/ Thin Pasta & Caesar Salad,Shrimp Scampi \nw/ Thin Pasta &\nCaesar Salad,Fish,Shell,,1,0,0,1,1,1,1,0
+10023,Lemon Salmon w/ Potatoes & Carrots,Lemon Salmon\nw/ Potatoes\n& Carrots,Fish,Ray,,1,0,0,1,1,1,1,1
+10024,One Pan Shrimp Scampi w/ Orzo,One Pan Shrimp\nScampi w/ Orzo,Fish,Shell,,1,0,0,1,1,1,1,0
+10025,Creamy Shrimp Ristotto w/ Mascarpone,Creamy Shrimp\nRisotto w/\nMascarpone,Fish,Shell,,1,0,0,1,1,1,1,0
+10026,Seared Salmon w/ Miso Honey Sauce,Seared Salmon\nw/ Miso\nHoney Sauce,Fish,Ray,,1,0,0,1,1,1,1,1
+10027,Sea Scallops w/ Mustard Sauce,Sea Scallops\nw/ Mustard\nSauce,Fish,Shell,,1,0,0,1,1,1,1,0
+10028,Sea Scallops w/ White Wine Shallots,Sea Scallops\nw/ White\nWine Shallots,Fish,Shell,,1,0,0,1,1,1,1,0
+10029,Seared Salomn w/ Moroccan Spice Crust,Seared Salmon\nw/ Moroccan\nSpice Crust,Fish,Ray,,1,0,0,1,1,1,1,1
+10030,Shrimp w/ Rosemary & Thyme,Shrimp w/\nRosemary &\nThyme,Fish,Shell,,1,0,0,1,1,1,1,0
+10031,Broiled Salmon w/ Mustard Soy Crust,Broiled Salmon\nw/ Mustard\nSoy Crust,Fish,Ray,,1,0,0,1,1,1,1,1
+10032,Blackened Tuna w/ Fresh Fruit Salsa,Blackened Tuna\nw/ Fresh Fruit\nSalsa,Fish,Bony,,1,0,0,1,1,1,1,1
+10033,Pan Seared Lemon Sole,Pan Seared\nLemon Sole,Fish,White,,1,0,0,1,1,1,1,1
+10034,Furikake Crusted Fish w/ Ginger Vinaigrette,Furikake Crusted\nFish w/ Ginger\nVinaigrette,Fish,Fish,,1,0,0,1,1,1,1,1
+10035,Grilled Salmon w/ Charred Corn Relish,Grillen Salmon\nw/ Charred\nCorn Relish,Fish,Ray,,1,0,0,1,1,1,1,1
+10036,Broiled Fish w/ Lemon Curry Butter,Broiled Fish w/\nLemon\nCurry Butter,Fish,Fish,,1,0,0,1,1,1,1,1
+10037,Salmon w/ Anchovy Garlic Butter,Salmon w/\nAnchovy\nGarlic Butter,Fish,Ray,,1,0,0,1,1,1,1,1
+10038,Burgers w/ Fries & Caesar Salad,Burgers w/\nFries & Caesar\nSalad,Meat,GroundBeef,,1,0,0,0,1,1,1,1
+10039,Fillets w/ Baked Potatoes & Acorn Squash,Fillets w/ Baked\nPotatoes & Acorn\nSquash,Meat,MeatCut,,1,0,0,0,1,1,1,1
+10040,Lamb Chops w/ Wild Rice & Brussel Sprouts,Lamb Chops w/\nWild Rice &\nBrussel Sprouts,Meat,Lamb,,1,0,0,0,1,1,1,1
+10041,7 Spiced Grilled Lamb Chops w/ Garlic Spinach,7 Spiced Grilled\nLamb Chops w/\nGarlic Spinach,Meat,Lamb,,1,0,0,0,1,1,1,1
+10042,Triple Lamb Burger w/ Fries & Cauliflower,Triple Lamb\nBurger w/ Fries\n& Cauliflower,Meat,Lamb,,1,0,0,0,1,1,1,1
+10043,Meatloaf w/ Baked Potatoes & Squash Squares,Meatloaf w/\nBaked Potatoes &\nSquash Squares,Meat,GroundBeef,,1,0,0,0,1,1,1,1
+10044,Hoisin Pork Chops w/ Rice & Carrots,Hoisin Pork\nChops w/ Rice\n& Carrots,Meat,Pork,,1,0,0,0,1,1,1,1
+10045,Meatballs w/ Garlic Bread & Caesar Salad,Meatballs w/\nGarlic Bread &\nCaesar Salad,Meat,GroundBeef,,1,0,0,0,1,1,1,1
+10046,Soy Steak w/ Potatoes & Acorn Squash,Soy Steak\n& Potatoes\nw/ Squash,Meat,MeatCut,,1,0,0,0,1,1,1,1
+10047,Steak w/ Broccoli & Creamy Farro,Steak w/\nBroccoli&\nCreamy Farro,Meat,MeatCut,,1,0,0,0,1,1,1,1
+10048,Steak Au Poivre,Steak Au\nPoivre,Meat,MeatCut,,1,0,0,0,1,1,1,1
+10049,Sloppy Joes,Sloppy Joes,Meat,GroundBeef,,1,0,0,0,1,1,1,1
+10050,Dukkah-Crusted Lamb Chops,Dukkah-Crusted\nLamb Chops,Meat,Lamb,,1,0,0,0,1,1,1,1
+10051,Winter Squash Carbonara w/ Pancetta & Sage,Winter Squash\nCarbonara w/\nPancetta & Sage,Meat,Pork,,1,0,0,0,1,1,1,1
+10052,"Penne w/ Garlic, Tomato, Spinach & Sausage","Penne w/\nGarlic, Tomato,\nSpinach &\nSausage",Meat,Sausage,,1,0,0,0,1,1,1,1
+10053,"Penne w/ Brussel Sprouts, & Pancetta","Penne w/\nBrussel Sprouts,\n& Pancetta",Meat,Pork,,1,0,0,0,1,1,1,1
+10054,Butternut Squash Lentil Loaf,Butternut\nSquash Lentil\nLoaf,Vegan,Vegan,,1,1,1,1,1,1,1,1
+10055,Tomato Basil Lentil Pasta,Tomato\nBasil Lentil\nPasta,Vegan,Vegan,,1,1,1,1,1,1,1,1
+10056,Mushroom Risotto,Mushroom\nRisotto,Vegan,Vegan,,1,1,1,1,1,1,1,1
+10057,Spicy Kale and Quinoa Black Bean Salad,Spicy Kale\n& Quinoa Black\nBean Salad,Vegan,Vegan,,1,1,1,1,1,1,1,1
+10058,Chickpea Tikka Masala,Chickpea\nTikka Masala,Vegan,Vegan,,1,1,1,1,1,1,1,1
+10059,One Pot Taco Pasta,One Pot\nTaco Pasta,Vegan,Vegan,,1,1,1,1,1,1,1,1
+10060,Veggie Fajita Rice Bowl,Veggie\nFajita Rice\nBowl,Vegetarian,Vegetarian,,1,0,1,1,1,1,1,1
+10061,Four Cheese Spaghetti Squash,Four Cheese\nSpaghetti\nSquash,Vegetarian,Vegetarian,,1,0,1,1,1,1,1,1
+10062,Peanut Tofu Buddha Bowl,Peanut\nTofu Buddha\nBowl,Vegetarian,Vegetarian,,1,0,1,1,1,1,0,1
+10063,Stuffed Peppers,Stuffed\nPeppers,Vegetarian,Vegetarian,,1,0,1,1,1,1,1,1
+10064,Grilled Zucchini Hummus Wrap,Grilled\nZucchini\nHummus Wrap,Vegetarian,Vegetarian,,1,0,1,1,1,1,1,1
+10065,Black Bean & Quinoa Tacos,Black Bean\n& Quinoa\nTacos,Vegetarian,Vegetarian,,1,0,1,1,1,1,1,1

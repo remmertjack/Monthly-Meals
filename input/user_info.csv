@@ -1,0 +1,4 @@
+﻿id,firstname,lastname,email,subscription_type,status
+0,First,Last,fl_0@email.com,basic,1
+1,First_1,Last_1,fl_1@email.com,basic,1
+2,First_2,Last_2,fl_2@email.com,basic,1
